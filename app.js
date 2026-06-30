@@ -163,4 +163,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ==========================================
+  // 7. PRIMARY NAVIGATION MEGA MENU DROPDOWN
+  // ==========================================
+  const dropdownItems = document.querySelectorAll('.cbp-nav__item.has-dropdown');
+  
+  dropdownItems.forEach(item => {
+    const trigger = item.querySelector('.dropdown-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Toggle this item
+        const isOpen = item.classList.contains('open');
+        
+        // Close all other dropdowns
+        dropdownItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('open');
+            const otherTrigger = otherItem.querySelector('.dropdown-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        if (isOpen) {
+          item.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.cbp-nav__item.has-dropdown')) {
+      dropdownItems.forEach(item => {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.dropdown-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
 });
