@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (code === 'trk89981166') {
+      if (code === 'cbptrk89981166') {
         parcelResult.style.display = 'block';
         parcelResult.style.borderLeft = '3px solid var(--color-success)';
         parcelResult.innerHTML = `
