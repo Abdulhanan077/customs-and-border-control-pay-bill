@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official U.S. Customs and Border Protection (CBP) online bill payment guide. Learn how to pay your CBP bills electronically via Pay.gov or by mail to the U.S. Bank Lockbox.">
+  <meta name="keywords" content="CBP, Bill Payments, Pay.gov, ACH Debit, Customs Duties, Lockbox Address">
+  <title>Bill Payments | U.S. Customs and Border Protection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SKIP TO MAIN CONTENT LINK FOR ACCESSIBILITY -->
+  <a href="#main-content" class="usa-skipnav" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; background: #005ea2; color: #fff; padding: 0.5rem; text-decoration: none; z-index: 10000;">Skip to main content</a>
+
+  <!-- ==========================================
+       TOP FEDERAL GOVERNMENT BANNER
+       ========================================== -->
+  <section class="usa-banner" aria-label="Official government website">
+    <div class="container">
+      <div class="usa-banner__header">
+        <div class="usa-banner__header-left">
+          <!-- US Flag SVG -->
+          <svg class="usa-banner__flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 11" aria-hidden="true" focusable="false">
+            <rect width="16" height="11" fill="#fff"/>
+            <rect width="16" height="0.846" fill="#b22234"/>
+            <rect width="16" height="0.846" y="1.692" fill="#b22234"/>
+            <rect width="16" height="0.846" y="3.385" fill="#b22234"/>
+            <rect width="16" height="0.846" y="5.077" fill="#b22234"/>
+            <rect width="16" height="0.846" y="6.769" fill="#b22234"/>
+            <rect width="16" height="0.846" y="8.462" fill="#b22234"/>
+            <rect width="16" height="0.846" y="10.154" fill="#b22234"/>
+            <rect width="6.857" height="5.923" fill="#3c3b6e"/>
+            <!-- 50 Stars drawn as dots for performance at tiny scale -->
+            <rect width="16" height="11" fill="none" stroke="#dfe1e2" stroke-width="0.5"/>
+          </svg>
+          <p class="usa-banner__text">An official website of the United States government</p>
+        </div>
+        <button id="banner-toggle" class="usa-banner__toggle-btn" aria-expanded="false" aria-controls="gov-banner-details">
+          <span>Here’s how you know</span>
+          <svg class="usa-banner__toggle-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Dropdown detailing verification -->
+      <div id="gov-banner-details" class="usa-banner__content">
+        <div class="usa-banner__guidance-grid">
+          <div class="usa-banner__guidance-item">
+            <!-- Icon SVG .gov -->
+            <svg class="usa-banner__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="20" cy="20" r="19" fill="#F0F4F7" stroke="#adadad" stroke-width="2"/>
+              <path d="M14 26V14h3v12h-3zm9 0V18h-2v-3h5v11h-3zm-10-8h2v2h-2v-2z" fill="#005ea2"/>
+            </svg>
+            <div class="usa-banner__guidance-text">
+              <strong>Official websites use .gov</strong>
+              <p>A <strong>.gov</strong> website belongs to an official government organization in the United States.</p>
+            </div>
+          </div>
+          <div class="usa-banner__guidance-item">
+            <!-- Icon SVG HTTPS/Lock -->
+            <svg class="usa-banner__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="20" cy="20" r="19" fill="#F0F4F7" stroke="#adadad" stroke-width="2"/>
+              <rect x="13" y="18" width="14" height="10" rx="2" fill="#005ea2"/>
+              <path d="M16 18v-4a4 4 0 1 1 8 0v4" stroke="#005ea2" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <div class="usa-banner__guidance-text">
+              <strong>Secure .gov websites use HTTPS</strong>
+              <p>A <strong>lock</strong> (or <strong>https://</strong>) means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FREEDOM 250 ANNIVERSARY TIMER BAR
+       ========================================== -->
+  <section class="freedom-250-bar" aria-label="America's 250th Anniversary Countdown">
+    <div class="container freedom-250-bar__inner">
+      <div class="freedom-250-bar__logo-section">
+        <!-- SVG America 250 Logo -->
+        <svg class="freedom-250-bar__logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Freedom 250 Crest Logo">
+          <circle cx="20" cy="20" r="18" fill="#1b365d" stroke="#f2a900" stroke-width="2"/>
+          <path d="M20 7 C27 7 33 13 33 20 C33 27 27 33 20 33 C13 33 7 27 7 20 C7 13 13 7 20 7 Z" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="20" y="21" font-family="'Public Sans', sans-serif" font-size="7" font-weight="bold" fill="#f2a900" text-anchor="middle">FREEDOM</text>
+          <text x="20" y="29" font-family="'Public Sans', sans-serif" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">250</text>
+          <!-- Small gold stars in crest -->
+          <polygon points="20,10 21,12 23,12 21.5,13 22,15 20,14 18,15 18.5,13 17,12 19,12" fill="#f2a900"/>
+        </svg>
+        <a href="#" class="freedom-250-bar__link">America 250 Anniversary Celebration</a>
+      </div>
+
+      <!-- Real-time dynamic countdown elements -->
+      <div class="freedom-250-bar__countdown" id="countdown-timer">
+        <span style="margin-right: 0.25rem; font-weight: 500;">Countdown to July 4, 2026:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="days-val">--</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="hours-val">--</span>
+          <span class="countdown-label">Hrs</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="minutes-val">--</span>
+          <span class="countdown-label">Mins</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="seconds-val">--</span>
+          <span class="countdown-label">Secs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CBP PRIMARY HEADER
+       ========================================== -->
+  <header class="cbp-header">
+    <div class="container cbp-header__inner">
+      <a href="#" class="cbp-header__brand" aria-label="Go to CBP Home">
+        <img src="logo.png" alt="U.S. Customs and Border Protection - Department of Homeland Security" class="cbp-header__logo-img">
+      </a>
+
+      <!-- Search bar -->
+      <div class="cbp-header__search">
+        <svg class="cbp-header__search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M15 15L11.24 11.24M13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="search" class="cbp-header__search-input" placeholder="Search cbp.gov" aria-label="Search CBP site">
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN NAVIGATION BAR
+       ========================================== -->
+  <nav class="cbp-nav" aria-label="Primary Navigation">
+    <div class="container">
+      <button class="mobile-nav-toggle" id="mobile-menu-btn" aria-expanded="false" aria-controls="primary-nav-links">
+        <span>MENU</span>
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M1 1H17M1 6H17M1 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <ul class="cbp-nav__inner" id="primary-nav-links">
+        <li class="cbp-nav__item"><a href="#">Travel</a></li>
+        <li class="cbp-nav__item active"><a href="#">Trade</a></li>
+        <li class="cbp-nav__item"><a href="#">Border Security</a></li>
+        <li class="cbp-nav__item"><a href="#">Newsroom</a></li>
+        <li class="cbp-nav__item"><a href="#">About CBP</a></li>
+        <li class="cbp-nav__item"><a href="#">Careers</a></li>
+        <li class="cbp-nav__item"><a href="#">Employee Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       MAIN LAYOUT (SIDEBAR & CONTENT)
+       ========================================== -->
+  <div class="container">
+    
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a href="#">Home</a></li>
+        <li class="breadcrumbs__item"><a href="#">Trade</a></li>
+        <li class="breadcrumbs__item"><a href="#">Priority Trade Issues</a></li>
+        <li class="breadcrumbs__item"><a href="#">Revenue</a></li>
+        <li class="breadcrumbs__item active" aria-current="page">Bill Payments</li>
+      </ul>
+    </nav>
+
+    <!-- TWO COLUMN CONTENT GRID -->
+    <div class="main-layout">
+
+      <!-- LEFT COLUMN: ACCORDION NAVIGATION -->
+      <aside class="sidebar-nav" aria-label="Sidebar navigation">
+        <h2 class="sidebar-nav__title">Priority Issues</h2>
+        <ul class="sidebar-nav__list">
+          <li class="sidebar-nav__item">
+            <a href="#" class="sidebar-nav__link">
+              <span>Forced Labor</span>
+              <span class="sidebar-nav__arrow">›</span>
+            </a>
+          </li>
+          <li class="sidebar-nav__item">
+            <a href="#" class="sidebar-nav__link">
+              <span>Intellectual Property Rights</span>
+              <span class="sidebar-nav__arrow">›</span>
+            </a>
+          </li>
+          <li class="sidebar-nav__item">
+            <a href="#" class="sidebar-nav__link">
+              <span>Import Safety</span>
+              <span class="sidebar-nav__arrow">›</span>
+            </a>
+          </li>
+          <li class="sidebar-nav__item expanded">
+            <a href="#" class="sidebar-nav__link toggle-submenu">
+              <span>Revenue</span>
+              <span class="sidebar-nav__arrow">›</span>
+            </a>
+            <ul class="sidebar-nav__sublist">
+              <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Overview</a></li>
+              <li class="sidebar-nav__item active"><a href="#" class="sidebar-nav__link">Bill Payments</a></li>
+              <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Continuous Bonds</a></li>
+              <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Automated Clearinghouse (ACH)</a></li>
+              <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Refunds &amp; Disbursements</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-nav__item">
+            <a href="#" class="sidebar-nav__link">
+              <span>Trade Agreements</span>
+              <span class="sidebar-nav__arrow">›</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN CONTENT PANEL -->
+      <main class="content-panel" id="main-content">
+        <h1>Bill Payments</h1>
+        
+        <p class="intro-text">
+          U.S. Customs and Border Protection (CBP) is leveraging the U.S. Treasury’s <strong>Pay.gov</strong> service to modernize payment processing and provide the public with an online bill payment option.
+        </p>
+
+        <p>
+          Beginning March 2026, most bills generated by CBP will include a QR code, as well as step-by-step instructions, directing the public to the appropriate Pay.gov form (see below for a copy of those instructions). Once at the Pay.gov form, the public will complete the required payor identification and bill/payment fields, authorizing CBP to pull the funds via ACH Debit from the payor’s U.S. Bank Account and pay the related bill(s), providing expedited clearance of the outstanding bill* and avoiding the accrual of any additional interest.
+        </p>
+
+        <h2>To Pay Electronically via Pay.gov</h2>
+        
+        <div class="options-grid">
+          
+          <!-- OPTION 1 CARD (QR Code & Steps) -->
+          <div class="option-card">
+            <h3>Option 1: Mobile Quick-Pay</h3>
+            <ol class="steps-list">
+              <li>Add ACH ID <strong>7005009613</strong> to your Bank Account as an Authorized Payee</li>
+              <li>Scan the below QR Code using your smartphone camera</li>
+              <li>Optional: "Sign In" to Your Pay.gov Account</li>
+              <li>Click <strong>"Continue to the Form"</strong></li>
+              <li>Complete Required Fields + Submit Payment</li>
+            </ol>
+            
+            <div class="qr-container">
+              <img src="qr_code.png" alt="QR Code to cbp bill payments on pay.gov" class="qr-code-img">
+              <span class="qr-label">Scan to Pay</span>
+            </div>
+          </div>
+
+          <!-- OPTION 2 CARD (Manual Pay.gov Steps) -->
+          <div class="option-card">
+            <h3>Option 2: Direct pay.gov Search</h3>
+            <ol class="steps-list">
+              <li>Add ACH ID <strong>7005009613</strong> to your Bank Account as an Authorized Payee</li>
+              <li>Go directly to <a href="https://www.pay.gov" target="_blank" rel="noopener">Pay.gov</a></li>
+              <li>Click <strong>"See All Forms"</strong> (located in the page header)</li>
+              <li>Select <strong>"View By: Form Name"</strong></li>
+              <li>Filter by <strong>"CBP Bill Payments"</strong> and click the link</li>
+              <li>Optional: "Sign In" to Your Pay.gov Account</li>
+              <li>Click <strong>"Continue to Form"</strong></li>
+              <li>Complete Required Fields + Submit Payment</li>
+            </ol>
+          </div>
+
+        </div>
+
+        <h2>Benefits of Online Bill Payment:</h2>
+        <ul class="benefits-list">
+          <li>Collection date credited per the Pay.gov confirmation "Payment Date," avoiding the accrual of any additional interest on an outstanding bill*</li>
+          <li>Instant electronic receipt and payment confirmation log history.</li>
+          <li>Eliminates mail delay transit times, avoiding overdue interest charges.</li>
+        </ul>
+
+        <!-- IMPORTANT NOTE -->
+        <div class="usa-alert">
+          <strong>* Notice on Expedited Clearance:</strong> To ensure expedited clearance of the debt, the bill number and amount paid must match the records in CBP’s billing system. If they do not, CBP personnel must research the payment and manually apply it, which will delay clearance. In this scenario, you will still be credited for the payment based on the Pay.gov "Payment Date," but it will delay notice of the bill being paid-in-full. Therefore, you must verify the bill number and amount due when entering information onto the Pay.gov form.
+        </div>
+
+        <p style="margin: 1.5rem 0; font-weight: 500;">
+          For additional assistance, please contact the Billing Help Desk at <span style="color: var(--color-primary-darker);">317-614-4811</span> or email <a href="mailto:billinginquiry@cbp.dhs.gov">billinginquiry@cbp.dhs.gov</a>.
+        </p>
+
+        <!-- PMS PARTICIPANTS WARNING BANNER -->
+        <div class="usa-alert usa-alert--important">
+          <strong>PMS Participants:</strong> Per this <a href="https://www.federalregister.gov/documents/2025/10/16/2025-19572/modification-of-the-national-customs-automation-program-test-regarding-periodic-monthly-statements" target="_blank" rel="noopener">FRN</a> (90 FR 48314) announced via CSMS Message #<a href="https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3f83c0a" target="_blank" rel="noopener">66599946</a>, if you are paying a supplemental duty bill (SDB) for an entry originally paid on a Periodic Monthly Statement (PMS), you <strong>MUST pay electronically</strong>, either via the above ACH Debit method through Pay.gov or via an ACH Credit payment. You may <strong>NOT</strong> pay via the below additional payment options. To pay via ACH Debit on Pay.gov, follow the instructions above. Questions pertaining to ACH Credit payments can be directed to <a href="mailto:ACH-CUSTOMS@cbp.dhs.gov">ACH-CUSTOMS@cbp.dhs.gov</a>.
+        </div>
+
+        <h2>Additional Payment Options</h2>
+        <p>
+          CBP will continue to utilize a lockbox facility at the U.S. Bank in St. Louis, Missouri to receive, process, and post most bill payment types. Please review the following and ensure payment is sent to the correct address (below):
+        </p>
+        
+        <ul class="bullet-list">
+          <li>Interest is assessed on bills based on the date CBP receives payment.</li>
+          <li>Note the "Amount Due After" date printed on your bill to account for interest that could accrue while your payment is in transit.</li>
+          <li>Allow a minimum of 7-10 days for payments sent by U.S. Postal Service (USPS) regular mail.</li>
+          <li>Allow a minimum of 2-3 days for payments sent by USPS overnight express mail.</li>
+          <li>If additional interest is assessed and your submitted payment did not satisfy the debt in full, a new balance will be due and billed.</li>
+          <li>Include the bill number(s) and amount(s), itemized by bill if appropriate, to be paid with your payment. This information may be included on the check or you may include a separate remittance slip with the payment. Missing details will delay application.</li>
+        </ul>
+
+        <!-- ADDRESS CARDS -->
+        <div class="address-grid">
+          
+          <div class="address-card">
+            <h4>USPS Address for U.S. Bank Lockbox:</h4>
+            <div class="address-content">
+              U.S. Customs and Border Protection
+              Bill Payments
+              P.O. Box 979126
+              St. Louis, MO 63197-9000
+            </div>
+            <p class="address-note">Use for regular envelope postal mailings.</p>
+          </div>
+
+          <div class="address-card">
+            <h4>Overnight Courier Address (Other than USPS):</h4>
+            <div class="address-content">
+              U.S. Government Lockbox
+              U.S. Customs and Border Protection
+              #979126
+              3180 Rider Trail South
+              Earth City, MO 63045
+            </div>
+            <p class="address-note"><strong>Note:</strong> This address should only be used as a last resort due to increased chance of courier routing delays.</p>
+          </div>
+
+        </div>
+
+        <h2>Surety Payments</h2>
+        <p>
+          If a surety has received a check from a principal in payment of bills and is simply forwarding that check to CBP, the surety should mail that check to:
+        </p>
+        <div class="usa-alert usa-alert--important" style="margin: 0.5rem 0 1.5rem 0; background-color: #fafafa; border-left-color: #71767a;">
+          <strong>U.S. Government Lockbox</strong><br>
+          U.S. Customs and Border Protection<br>
+          #979126<br>
+          3180 Rider Trail South<br>
+          Earth City, MO 63045
+        </div>
+
+        <p>
+          If a surety is sending its check to pay bills (other than FP&F bills) that are owed by their principal, the surety should mail their check to the Revenue Division at the following address:
+        </p>
+        <div class="usa-alert usa-alert--important" style="margin: 0.5rem 0 1.5rem 0; background-color: #fafafa; border-left-color: #71767a;">
+          <strong>U.S. Customs and Border Protection</strong><br>
+          Revenue Division - Cashier<br>
+          8899 East 56th Street<br>
+          Indianapolis, IN 46249
+        </div>
+
+        <!-- METADATA FOOTER -->
+        <div class="page-metadata">
+          <span>Last Modified: May 04, 2026</span>
+          <span>Topic: Trade Revenue &amp; Billing</span>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ==========================================
+       CBP REPLICATED FOOTER
+       ========================================== -->
+  <footer class="cbp-footer">
+    <div class="container">
+      <div class="cbp-footer__top">
+        
+        <div class="cbp-footer__brand-col">
+          <a href="#" class="cbp-footer__seal-link">
+            <!-- DHS Crest Vector SVG -->
+            <svg class="cbp-footer__seal" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" fill="#002a54" stroke="#ffffff" stroke-width="2"/>
+              <path d="M50 15 L78 35 L78 70 L50 85 L22 70 L22 35 Z" fill="#1b365d" stroke="#ffffff" stroke-width="2"/>
+              <path d="M50 20 L70 35 L70 65 L50 78 L30 65 L30 35 Z" fill="#ffffff"/>
+              <!-- Internal shield details -->
+              <rect x="47" y="40" width="6" height="20" fill="#b22234"/>
+              <text x="50" y="38" font-family="sans-serif" font-size="8" font-weight="bold" fill="#002a54" text-anchor="middle">DHS</text>
+            </svg>
+            <span class="cbp-footer__seal-title">U.S. Customs and Border Protection<br><span style="font-size: 13px; font-weight: normal; color: #a9aeb1;">Department of Homeland Security</span></span>
+          </a>
+          <p class="cbp-footer__brand-desc">
+            Official website of the Department of Homeland Security. Replicated under the guidelines of the US Web Design System.
+          </p>
+        </div>
+
+        <div class="cbp-footer__nav-col">
+          <h4>About CBP</h4>
+          <ul class="cbp-footer__nav-list">
+            <li><a href="#">About cbp.gov</a></li>
+            <li><a href="#">Commissioner Message</a></li>
+            <li><a href="#">Organization Structure</a></li>
+            <li><a href="#">Contact Revenue Division</a></li>
+          </ul>
+        </div>
+
+        <div class="cbp-footer__nav-col">
+          <h4>Resources</h4>
+          <ul class="cbp-footer__nav-list">
+            <li><a href="#">Billing Help Desk Support</a></li>
+            <li><a href="https://www.pay.gov" target="_blank" rel="noopener">Pay.gov Official Portal</a></li>
+            <li><a href="#">CSMS Messaging Center</a></li>
+            <li><a href="#">CBP Forms &amp; Documents</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cbp-footer__bottom">
+        <ul class="cbp-footer__bottom-links">
+          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">FOIA</a></li>
+          <li><a href="#">No FEAR Act</a></li>
+          <li><a href="#">Security Warnings</a></li>
+        </ul>
+        <span class="cbp-footer__copyright">&copy; 2026 U.S. Customs and Border Protection. Replicated Replica Project.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
