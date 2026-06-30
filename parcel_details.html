@@ -337,102 +337,227 @@
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
             <div>
               <strong style="color: var(--color-primary-darker); font-size: 16px; display: block; margin-bottom: 0.25rem;">Customs Status: Action Required</strong>
-              <span style="color: var(--color-neutral-dark); font-size: 14px;">Import duties and administrative handling fees must be settled to initiate shipment release.</span>
+              <span style="color: var(--color-neutral-dark); font-size: 14px;">Shipment held pending settlement of outstanding customs clearance and brokerage fees.</span>
             </div>
             <span class="status-badge status-badge--pending">Pending Payment</span>
           </div>
         </div>
 
-        <!-- Professional Shipment Form layout -->
-        <div style="background-color: var(--color-neutral-lightest); border: 1px solid var(--color-border-light); border-radius: 6px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.02); margin-bottom: 2.5rem;">
+        <!-- Professional Invoice Form Layout -->
+        <div style="background-color: #ffffff; border: 1px solid var(--color-border-light); border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 2.5rem; position: relative;">
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
-            <div>
-              <h3 style="margin-top: 0; font-size: 14px; text-transform: uppercase; color: #71767a; letter-spacing: 0.5px;">Consignee / Recipient</h3>
-              <p style="font-size: 16px; font-weight: 700; color: var(--color-primary-darker); margin-bottom: 0.25rem;">Quirk Donald Williams</p>
-              <p style="font-size: 14.5px; color: #5b616b; line-height: 1.4; margin: 0;">
-                1044 Birch Street<br>
-                St. Louis, MO 63102<br>
-                United States
-              </p>
+          <!-- Document Header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--color-primary-darker); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <!-- Small CBP Seal SVG -->
+              <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#1b365d" stroke="#ad8733" stroke-width="2"/>
+                <circle cx="50" cy="50" r="42" fill="#ffffff"/>
+                <circle cx="50" cy="50" r="39" fill="#1b365d"/>
+                <path d="M50 20 L58 35 L42 35 Z" fill="#ad8733"/>
+                <path d="M50 25 L65 42 C65 52 50 65 50 65 C50 65 35 52 35 42 Z" fill="#ffffff" stroke="#ad8733" stroke-width="1.5"/>
+                <rect x="45" y="41" width="10" height="13" fill="#b22234"/>
+                <rect x="45" y="41" width="10" height="2" fill="#3c3b6e"/>
+              </svg>
+              <div>
+                <h4 style="font-size: 14px; font-weight: 800; color: var(--color-primary-darker); margin: 0; line-height: 1.2;">CUSTOMS AND BORDER PROTECTION (CBP)</h4>
+                <p style="font-size: 11px; color: #5b616b; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2px;">Department of Homeland Security</p>
+                <p style="font-size: 10px; color: #71767a; margin: 0;">One World Trade Center, Suite 50.200, New York, NY 10007</p>
+              </div>
             </div>
-            <div>
-              <h3 style="margin-top: 0; font-size: 14px; text-transform: uppercase; color: #71767a; letter-spacing: 0.5px;">Shipment Reference</h3>
-              <p style="font-size: 14.5px; margin-bottom: 0.35rem; color: #323a45;">Tracking Code: <strong style="font-family: monospace; font-size: 15px; color: var(--color-primary-darker);">cbpTRK89981166</strong></p>
-              <p style="font-size: 14.5px; margin-bottom: 0.35rem; color: #323a45;">Duty Bill ID: <strong style="font-family: monospace; font-size: 15px;">CBP-BILL-89981166</strong></p>
-              <p style="font-size: 14.5px; margin-bottom: 0; color: #323a45;">Authorized Payee ACH ID: <strong>7005009613</strong></p>
+            <!-- Atlas Logistics Logo -->
+            <div style="display: flex; align-items: center; gap: 0.5rem; border-left: 1px solid var(--color-border-light); padding-left: 1rem;">
+              <svg width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 30 L20 8 L34 30 Z" fill="#1b365d"/>
+                <path d="M12 30 L20 18 L28 30 Z" fill="#f2a900"/>
+              </svg>
+              <div>
+                <h4 style="font-size: 13px; font-weight: 800; color: #1b365d; margin: 0; line-height: 1.1; letter-spacing: -0.2px;">ATLAS LOGISTICS</h4>
+                <p style="font-size: 9px; color: #f2a900; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2px;">A Complete Logistics Solution</p>
+              </div>
             </div>
           </div>
 
-          <h3 style="font-size: 16px; color: var(--color-primary-darker); margin-bottom: 1rem; border-bottom: 2px solid var(--color-primary-light); padding-bottom: 0.25rem;">Customs Duty Assessment Breakdown</h3>
-          
+          <!-- Ref Numbers and Date -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; font-size: 13.5px; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; color: #323a45;">
+            <div>Our Ref: <strong>CBP/REF-TRK89981</strong></div>
+            <div style="text-align: center;">Your Ref: <strong style="background-color: var(--color-primary-light); padding: 0.1rem 0.4rem; border-radius: 2px; font-family: monospace;">TRK89981166</strong></div>
+            <div style="text-align: right;">Date: <strong>25/06/2026</strong></div>
+          </div>
+
+          <!-- Recipient address and Admit Stamp -->
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+            <div>
+              <p style="font-size: 14.5px; font-weight: 700; color: var(--color-primary-darker); margin-bottom: 0.5rem;">Attention: Quirk Donald Williams</p>
+              <p style="font-size: 14.5px; color: #323a45; line-height: 1.5; font-family: var(--font-heading); margin: 0;">
+                Address: 6721 S FORK<br>
+                TITUSVILLE, FL 32780
+              </p>
+            </div>
+            <!-- Admitted Stamp -->
+            <div style="border: 2px dashed #1b365d; border-radius: 8px; padding: 0.5rem 1rem; transform: rotate(-3deg); color: #1b365d; text-align: center; font-family: var(--font-heading); max-width: 200px; box-shadow: inset 0 0 4px rgba(27,54,93,0.1);">
+              <span style="font-size: 8px; font-weight: 700; text-transform: uppercase; display: block; border-bottom: 1px solid #1b365d; padding-bottom: 0.1rem; letter-spacing: 0.3px;">U.S. Customs and Border Protection</span>
+              <strong style="font-size: 13px; display: block; margin: 0.2rem 0; letter-spacing: 0.5px; color: #005ea2;">ADMITTED</strong>
+              <span style="font-size: 11px; font-weight: 800; display: block; margin-bottom: 0.15rem;">JUN 25, 2026</span>
+              <span style="font-size: 7.5px; font-weight: 600; display: block; background-color: #1b365d; color: #ffffff; padding: 0.05rem 0.25rem; border-radius: 2px;">CLASS: RELEASED</span>
+              <span style="font-size: 7.5px; font-weight: 700; text-transform: uppercase; display: block; margin-top: 0.15rem; letter-spacing: 0.2px;">Department of Homeland Security</span>
+            </div>
+          </div>
+
+          <!-- Requirement Title -->
+          <h2 style="font-size: 18px; font-weight: 800; text-align: center; color: #b22234; border-bottom: 2px solid #b22234; display: table; margin: 2rem auto; padding-bottom: 0.25rem; letter-spacing: 0.8px;">CLEARANCE REQUIREMENT</h2>
+
+          <!-- Document Text -->
+          <div style="font-size: 14.5px; line-height: 1.6; color: #323a45; margin-bottom: 2rem; text-align: justify;">
+            <p style="margin-bottom: 1rem;">
+              This office is writing to you regarding the Custom Inspection and Clearance protocol. The CBP Custom Clearance Unit has intercepted your incoming consignment for thorough inspection. The package has been flagged pending proper security clearance and surety clearing validation.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              You are hereby notified that the policy of US Customs and Border Protection mandates that all incoming international packages must hold a valid corporate surety clearing tag or an approved clearance waiver. Your package is currently being held at our security facility and will not be released for final delivery until the outstanding custom clearance and administration duties are fully settled.
+            </p>
+          </div>
+
+          <!-- Assessment Table -->
           <table class="invoice-table">
             <thead>
               <tr>
-                <th>Description</th>
-                <th style="width: 20%; text-align: center;">Tariff Rate</th>
-                <th style="width: 25%; text-align: right;">Amount Due</th>
+                <th style="width: 8%; text-align: center;">No.</th>
+                <th>Custom Duty &amp; Clearance Specifications</th>
+                <th style="width: 25%; text-align: right;">Amount (USD)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Imported Cargo Declared Value (Commercial Goods)</td>
-                <td style="text-align: center;">-</td>
-                <td class="amount">$1,250.00</td>
+                <td style="text-align: center;">1.</td>
+                <td>Customs Brokerage Entry Processing Fee</td>
+                <td class="amount">$245.00</td>
               </tr>
               <tr>
-                <td>CBP Assessed Duty Fee (HTS Compliance Category)</td>
-                <td style="text-align: center; font-weight: 600;">10.00%</td>
-                <td class="amount" style="color: var(--color-primary-darker);">$125.00</td>
+                <td style="text-align: center;">2.</td>
+                <td>Terminal Handling Charge</td>
+                <td class="amount">$310.00</td>
               </tr>
               <tr>
-                <td>Administrative Lockbox Processing &amp; Custom Courier Fees</td>
-                <td style="text-align: center;">Flat</td>
-                <td class="amount">$25.00</td>
+                <td style="text-align: center;">3.</td>
+                <td>Merchandise Processing Fee</td>
+                <td class="amount">$614.35</td>
               </tr>
-              <tr style="font-weight: 700; font-size: 15px; border-top: 2px solid var(--color-border);">
-                <td>Total Balance Outstanding</td>
-                <td style="text-align: center;">Combined</td>
-                <td class="amount" style="color: #b22234; font-size: 16px; font-weight: 700;">$150.00</td>
+              <tr>
+                <td style="text-align: center;">4.</td>
+                <td>Single-Entry Customs Bond Fee</td>
+                <td class="amount">$185.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">5.</td>
+                <td>Intensive Examination Site Transfer Fee</td>
+                <td class="amount">$275.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">6.</td>
+                <td>Intensive Examination Handling Fee</td>
+                <td class="amount">$395.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">7.</td>
+                <td>Airport Security Surcharge</td>
+                <td class="amount">$150.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">8.</td>
+                <td>Insurance Liability Revalidation Fee</td>
+                <td class="amount">$225.05</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">9.</td>
+                <td>High-Value Cargo Storage Fee</td>
+                <td class="amount">$160.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">10.</td>
+                <td>Chain-of-Custody Integrity Verification Fee</td>
+                <td class="amount">$295.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">11.</td>
+                <td>Digital Manifest and EDI Transmission Fee</td>
+                <td class="amount">$180.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">12.</td>
+                <td>Port Security Oversight Fee</td>
+                <td class="amount">$480.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">13.</td>
+                <td>High-Risk Commodity Handling Fee</td>
+                <td class="amount">$575.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">14.</td>
+                <td>Armored Carrier Intake and Release Preparation Fee</td>
+                <td class="amount">$400.00</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">15.</td>
+                <td>Administrative Consolidation and Processing Fee</td>
+                <td class="amount">$1,637.60</td>
+              </tr>
+              <tr style="font-weight: 700; font-size: 15px; border-top: 2px solid var(--color-border); background-color: var(--color-neutral-light);">
+                <td colspan="2" style="text-align: right; padding: 0.75rem 1rem;">Total Balance Outstanding:</td>
+                <td class="amount" style="color: #b22234; font-size: 16px; font-weight: 700;">$6,127.00</td>
               </tr>
             </tbody>
           </table>
 
-          <!-- Official Release Action Card -->
-          <div style="background-color: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: 4px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
-            <div>
-              <p style="margin: 0; font-size: 14.5px; font-weight: 600; color: var(--color-primary-darker);">Direct Payment Instructions via Pay.gov</p>
-              <p style="margin: 0.25rem 0 0; font-size: 13px; color: #323a45;">Utilize CBP Bill Payments search using Payee ACH ID <strong>7005009613</strong> and Bill Number <strong>CBP-BILL-89981166</strong>.</p>
+          <!-- Footer warning -->
+          <p style="font-size: 13.5px; line-height: 1.55; color: #323a45; margin-top: 1.5rem; text-align: justify; border-left: 3px solid #b22234; padding-left: 0.75rem; font-style: italic;">
+            The total clearance cost specified above must be paid in full to prevent custom confiscation. Failure to resolve this clearance requirement will authorize border agents to seize and inspect the consignment container contents and execute standard legal protocols.
+          </p>
+
+          <!-- Stamps & Signature footer -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 3.5rem; flex-wrap: wrap; gap: 2rem; border-top: 1px solid var(--color-border-light); padding-top: 2rem;">
+            
+            <!-- Atlas Logistics Stamp (Teal/blue) -->
+            <div style="border: 2px solid #008837; border-radius: 4px; padding: 0.5rem; transform: rotate(-2deg); color: #008837; font-family: var(--font-heading); font-size: 10px; font-weight: 700; text-align: center; max-width: 160px; line-height: 1.2;">
+              <span style="display: block; font-size: 8px; letter-spacing: 0.5px;">ATLAS LOGISTICS</span>
+              <span style="display: block; font-size: 7.5px; border-bottom: 1.5px solid #008837; padding-bottom: 0.1rem; margin-bottom: 0.15rem;">SECURITY DIVISION</span>
+              <strong style="display: block; font-size: 11px; color: #008837; margin: 0.15rem 0;">APPROVED</strong>
+              <span style="display: block; font-size: 9px; font-weight: 800;">25/06/2026</span>
+              <span style="display: block; font-size: 7px; color: #ffffff; background-color: #008837; padding: 0.05rem 0.2rem; border-radius: 1px; margin-top: 0.15rem; letter-spacing: 0.3px;">PASSED FOR DELIVERY</span>
             </div>
-            <a href="index.html#electronic-payment" style="background-color: var(--color-primary); color: #ffffff; text-decoration: none; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 700; font-size: 13.5px; transition: background-color 0.2s;">View Payment Forms</a>
+
+            <!-- Signature block -->
+            <div style="text-align: center; min-width: 180px;">
+              <span style="font-family: 'Brush Script MT', cursive, 'Georgia', serif; font-size: 26px; font-weight: bold; color: #1b365d; display: block; transform: rotate(-2deg); line-height: 1;">Angela. C</span>
+              <div style="width: 100%; border-bottom: 1.5px solid #71767a; margin: 0.5rem 0;"></div>
+              <span style="font-size: 12px; font-weight: 700; color: #323a45; text-transform: uppercase; letter-spacing: 0.5px;">ANGELA. C</span>
+            </div>
+
+            <!-- US Border Security Stamp (Red) -->
+            <div style="border: 2px solid #b22234; border-radius: 4px; padding: 0.5rem; transform: rotate(3deg); color: #b22234; font-family: var(--font-heading); font-size: 10px; font-weight: 700; text-align: center; max-width: 160px; line-height: 1.2;">
+              <span style="display: block; font-size: 7.5px; border-bottom: 1.5px solid #b22234; padding-bottom: 0.1rem; margin-bottom: 0.15rem; letter-spacing: 0.3px;">U.S. BORDER SECURITY</span>
+              <span style="display: block; font-size: 7.5px; margin-bottom: 0.15rem;">PORT OF ENTRY - NY/NJ</span>
+              <strong style="display: block; font-size: 11px; color: #b22234; margin: 0.15rem 0; letter-spacing: 0.5px;">SECURE HOLD</strong>
+              <span style="display: block; font-size: 7.5px; color: #ffffff; background-color: #b22234; padding: 0.05rem 0.2rem; border-radius: 1px; margin-top: 0.15rem; letter-spacing: 0.3px;">CBP DETENTION FACILITY</span>
+            </div>
+
           </div>
 
         </div>
 
-        <h2>Cargo Tracking Event Log</h2>
-        <ul class="timeline">
-          <li class="timeline-item active">
-            <span class="timeline-date">June 29, 2026 - 11:32 AM</span>
-            <div class="timeline-desc">
-              <strong>Held for Customs Clearance</strong><br>
-              Shipment processed at St. Louis Lockbox Hub. Customs clearance pending payment of duties (Invoice ID: CBP-BILL-89981166).
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-date">June 28, 2026 - 03:15 PM</span>
-            <div class="timeline-desc">
-              <strong>Arrived at Port of Entry</strong><br>
-              Consignment received at St. Louis International Terminal and unloaded for tariff scanning.
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-date">June 25, 2026 - 09:40 AM</span>
-            <div class="timeline-desc">
-              <strong>Dispatched from Origin Hub</strong><br>
-              Cargo loaded and cleared for transit to destination terminal.
-            </div>
-          </li>
-        </ul>
+        <!-- Official Pay.gov instruction link -->
+        <div style="background-color: var(--color-neutral-light); border: 1px solid var(--color-border-light); border-top: 4px solid var(--color-primary); border-radius: 4px; padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="margin-top: 0; color: var(--color-primary-darker); font-size: 16px;">How to Settle these Clearance Fees Online</h3>
+          <p style="font-size: 14px; margin-bottom: 1rem; color: #323a45;">
+            To secure the immediate release of the shipment, pay the total outstanding balance of <strong>$6,127.00</strong> using our online billing gateway. Follow these instructions:
+          </p>
+          <ol style="margin-left: 1.5rem; font-size: 13.5px; line-height: 1.6; color: #323a45;">
+            <li>Go to <a href="index.html#electronic-payment" style="font-weight: 700;">Pay.gov Online Payment Instructions</a> on the main page.</li>
+            <li>Add Authorized Payee ID <strong>7005009613</strong> to your bank account.</li>
+            <li>Locate the <strong>"CBP Bill Payments"</strong> form on Pay.gov.</li>
+            <li>Submit the payment using Bill Number <strong>CBP-BILL-89981166</strong> and Amount <strong>$6,127.00</strong>.</li>
+          </ol>
+        </div>
 
       </main>
 
