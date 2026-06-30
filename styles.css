@@ -426,6 +426,10 @@ a:hover {
   gap: 1.5rem;
 }
 
+.mega-menu--4-cols .mega-menu__columns {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .mega-menu__col h4 {
   margin-top: 0;
   margin-bottom: 0.75rem;
