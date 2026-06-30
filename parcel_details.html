@@ -85,6 +85,81 @@
       color: var(--color-warning-text);
       border: 1px solid var(--color-warning-border);
     }
+    /* Responsive invoice components */
+    .invoice-container {
+      background-color: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: 6px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--color-primary-darker);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .invoice-logo-wrapper {
+      display: flex;
+      align-items: center;
+      border-left: 1px solid var(--color-border-light);
+      padding-left: 1.5rem;
+      height: 50px;
+    }
+    .invoice-refs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 13.5px;
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 0.75rem;
+      color: #323a45;
+    }
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+      border: 1px solid var(--color-border-light);
+      border-radius: 4px;
+    }
+    @media (max-width: 768px) {
+      .invoice-container {
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .invoice-container {
+        padding: 1.25rem;
+      }
+      .invoice-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .invoice-logo-wrapper {
+        border-left: none;
+        padding-left: 0;
+        height: auto;
+        margin-top: 0.5rem;
+      }
+      .invoice-refs {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .invoice-refs > div {
+        text-align: left !important;
+      }
+      .invoice-table {
+        min-width: 600px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -344,10 +419,10 @@
         </div>
 
         <!-- Professional Invoice Form Layout -->
-        <div style="background-color: #ffffff; border: 1px solid var(--color-border-light); border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 2.5rem; position: relative;">
+        <div class="invoice-container">
           
           <!-- Document Header -->
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--color-primary-darker); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div class="invoice-header">
             <div style="display: flex; align-items: center; gap: 1rem;">
               <img src="cbp_seal.jpg" alt="CBP Seal" style="height: 52px; width: 52px; object-fit: contain; border-radius: 50%;">
               <div>
@@ -357,13 +432,13 @@
               </div>
             </div>
             <!-- Atlas Logistics Logo -->
-            <div style="display: flex; align-items: center; border-left: 1px solid var(--color-border-light); padding-left: 1.5rem; height: 50px;">
+            <div class="invoice-logo-wrapper">
               <img src="atlas_logo.png" alt="Atlas Logistics Logo" style="height: 48px; width: auto; object-fit: contain;">
             </div>
           </div>
 
           <!-- Ref Numbers and Date -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; font-size: 13.5px; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; color: #323a45;">
+          <div class="invoice-refs">
             <div>Our Ref: <strong>CBP/REF-TRK89981</strong></div>
             <div style="text-align: center;">Your Ref: <strong style="background-color: var(--color-primary-light); padding: 0.1rem 0.4rem; border-radius: 2px; font-family: monospace;">CBPTRK89981166</strong></div>
             <div style="text-align: right;">Date: <strong>25/06/2026</strong></div>
@@ -392,96 +467,98 @@
           </div>
 
           <!-- Assessment Table -->
-          <table class="invoice-table">
-            <thead>
-              <tr>
-                <th style="width: 8%; text-align: center;">No.</th>
-                <th>Custom Duty &amp; Clearance Specifications</th>
-                <th style="width: 25%; text-align: right;">Amount (USD)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="text-align: center;">1.</td>
-                <td>Customs Brokerage Entry Processing Fee</td>
-                <td class="amount">$245.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">2.</td>
-                <td>Terminal Handling Charge</td>
-                <td class="amount">$310.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">3.</td>
-                <td>Merchandise Processing Fee</td>
-                <td class="amount">$614.35</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">4.</td>
-                <td>Single-Entry Customs Bond Fee</td>
-                <td class="amount">$185.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">5.</td>
-                <td>Intensive Examination Site Transfer Fee</td>
-                <td class="amount">$275.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">6.</td>
-                <td>Intensive Examination Handling Fee</td>
-                <td class="amount">$395.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">7.</td>
-                <td>Airport Security Surcharge</td>
-                <td class="amount">$150.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">8.</td>
-                <td>Insurance Liability Revalidation Fee</td>
-                <td class="amount">$225.05</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">9.</td>
-                <td>High-Value Cargo Storage Fee</td>
-                <td class="amount">$160.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">10.</td>
-                <td>Chain-of-Custody Integrity Verification Fee</td>
-                <td class="amount">$295.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">11.</td>
-                <td>Digital Manifest and EDI Transmission Fee</td>
-                <td class="amount">$180.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">12.</td>
-                <td>Port Security Oversight Fee</td>
-                <td class="amount">$480.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">13.</td>
-                <td>High-Risk Commodity Handling Fee</td>
-                <td class="amount">$575.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">14.</td>
-                <td>Armored Carrier Intake and Release Preparation Fee</td>
-                <td class="amount">$400.00</td>
-              </tr>
-              <tr>
-                <td style="text-align: center;">15.</td>
-                <td>Administrative Consolidation and Processing Fee</td>
-                <td class="amount">$1,637.60</td>
-              </tr>
-              <tr style="font-weight: 700; font-size: 15px; border-top: 2px solid var(--color-border); background-color: var(--color-neutral-light);">
-                <td colspan="2" style="text-align: right; padding: 0.75rem 1rem;">Total Balance Outstanding:</td>
-                <td class="amount" style="color: #b22234; font-size: 16px; font-weight: 700;">$6,127.00</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrapper">
+            <table class="invoice-table">
+              <thead>
+                <tr>
+                  <th style="width: 8%; text-align: center;">No.</th>
+                  <th>Custom Duty &amp; Clearance Specifications</th>
+                  <th style="width: 25%; text-align: right;">Amount (USD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center;">1.</td>
+                  <td>Customs Brokerage Entry Processing Fee</td>
+                  <td class="amount">$245.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">2.</td>
+                  <td>Terminal Handling Charge</td>
+                  <td class="amount">$310.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">3.</td>
+                  <td>Merchandise Processing Fee</td>
+                  <td class="amount">$614.35</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">4.</td>
+                  <td>Single-Entry Customs Bond Fee</td>
+                  <td class="amount">$185.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">5.</td>
+                  <td>Intensive Examination Site Transfer Fee</td>
+                  <td class="amount">$275.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">6.</td>
+                  <td>Intensive Examination Handling Fee</td>
+                  <td class="amount">$395.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">7.</td>
+                  <td>Airport Security Surcharge</td>
+                  <td class="amount">$150.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">8.</td>
+                  <td>Insurance Liability Revalidation Fee</td>
+                  <td class="amount">$225.05</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">9.</td>
+                  <td>High-Value Cargo Storage Fee</td>
+                  <td class="amount">$160.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">10.</td>
+                  <td>Chain-of-Custody Integrity Verification Fee</td>
+                  <td class="amount">$295.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">11.</td>
+                  <td>Digital Manifest and EDI Transmission Fee</td>
+                  <td class="amount">$180.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">12.</td>
+                  <td>Port Security Oversight Fee</td>
+                  <td class="amount">$480.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">13.</td>
+                  <td>High-Risk Commodity Handling Fee</td>
+                  <td class="amount">$575.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">14.</td>
+                  <td>Armored Carrier Intake and Release Preparation Fee</td>
+                  <td class="amount">$400.00</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">15.</td>
+                  <td>Administrative Consolidation and Processing Fee</td>
+                  <td class="amount">$1,637.60</td>
+                </tr>
+                <tr style="font-weight: 700; font-size: 15px; border-top: 2px solid var(--color-border); background-color: var(--color-neutral-light);">
+                  <td colspan="2" style="text-align: right; padding: 0.75rem 1rem;">Total Balance Outstanding:</td>
+                  <td class="amount" style="color: #b22234; font-size: 16px; font-weight: 700;">$6,127.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <!-- Footer warning -->
           <p style="font-size: 13.5px; line-height: 1.55; color: #323a45; margin-top: 1.5rem; text-align: justify; border-left: 3px solid #b22234; padding-left: 0.75rem; font-style: italic;">
