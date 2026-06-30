@@ -108,6 +108,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // 6. PARCEL TRACKING SEARCH (CASE INSENSITIVE)
+  // ==========================================
+  const parcelInput = document.getElementById('parcel-search-input');
+  const parcelBtn = document.getElementById('parcel-search-btn');
+  const parcelResult = document.getElementById('parcel-search-result');
+
+  if (parcelBtn && parcelInput && parcelResult) {
+    const performSearch = () => {
+      const code = parcelInput.value.trim().toLowerCase();
+      if (!code) {
+        parcelResult.style.display = 'block';
+        parcelResult.style.borderLeft = '3px solid #b22234';
+        parcelResult.innerHTML = `<span style="color: #b22234; font-weight: 600; font-size: 14px;">Please enter a valid tracking number.</span>`;
+        return;
+      }
+
+      if (code === 'cbptrk89981166') {
+        parcelResult.style.display = 'block';
+        parcelResult.style.borderLeft = '3px solid var(--color-success)';
+        parcelResult.innerHTML = `
+          <div>
+            <strong style="color: var(--color-success); font-size: 14px;">Shipment Record Found</strong>
+            <p style="margin: 0.25rem 0 0.5rem 0; font-size: 14.5px; color: #1b1b1b;">
+              Consignee: <a href="parcel_details.html" style="font-weight: 700; color: var(--color-primary); text-decoration: underline;" id="parcel-link">Quirk Donald Williams</a>
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #71767a;">Click on the name to open the official customs clearance form and invoice details.</p>
+          </div>
+        `;
+      } else {
+        parcelResult.style.display = 'block';
+        parcelResult.style.borderLeft = '3px solid #5b616b';
+        parcelResult.innerHTML = `<span style="color: #5b616b; font-size: 14px;">No customs records found for tracking number: <strong>${parcelInput.value}</strong>. Please check the spelling and try again.</span>`;
+      }
+    };
+
+    parcelBtn.addEventListener('click', performSearch);
+    parcelInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        performSearch();
+      }
+    });
+  }
+
   // Highlight page when options cards are hovered
   const optionCards = document.querySelectorAll('.option-card');
   optionCards.forEach(card => {

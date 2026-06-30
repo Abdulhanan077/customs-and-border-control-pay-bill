@@ -3,10 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official U.S. Customs and Border Protection (CBP) online bill payment guide. Learn how to pay your CBP bills electronically via Pay.gov or by mail to the U.S. Bank Lockbox.">
-  <meta name="keywords" content="CBP, Bill Payments, Pay.gov, ACH Debit, Customs Duties, Lockbox Address">
-  <title>Bill Payments | U.S. Customs and Border Protection</title>
+  <meta name="description" content="Customs Cargo and Invoice Status for Tracking Number cbpTRK89981166. View outstanding import duties and release compliance steps.">
+  <title>Customs Cargo Details | U.S. Customs and Border Protection</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Details-specific table styles */
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 14.5px;
+    }
+    .invoice-table th, .invoice-table td {
+      border: 1px solid var(--color-border-light);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .invoice-table th {
+      background-color: var(--color-neutral-light);
+      color: var(--color-primary-darker);
+      font-weight: 700;
+    }
+    .invoice-table tr:nth-child(even) td {
+      background-color: var(--color-neutral-lightest);
+    }
+    .invoice-table td.amount {
+      text-align: right;
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+      border-left: 2px solid var(--color-border-light);
+      list-style: none;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: calc(-2rem - 6px);
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--color-primary-light);
+    }
+    .timeline-item.active::before {
+      background-color: var(--color-accent-gold);
+      box-shadow: 0 0 0 2px rgba(242, 169, 0, 0.2);
+    }
+    .timeline-date {
+      font-weight: 700;
+      font-size: 13px;
+      color: #71767a;
+      display: block;
+    }
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--color-neutral-dark);
+      margin-top: 0.25rem;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .status-badge--pending {
+      background-color: var(--color-warning-bg);
+      color: var(--color-warning-text);
+      border: 1px solid var(--color-warning-border);
+    }
+  </style>
 </head>
 <body>
 
@@ -20,7 +99,6 @@
     <div class="container">
       <div class="usa-banner__header">
         <div class="usa-banner__header-left">
-          <!-- US Flag SVG -->
           <svg class="usa-banner__flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 11" aria-hidden="true" focusable="false">
             <rect width="16" height="11" fill="#fff"/>
             <rect width="16" height="0.846" fill="#b22234"/>
@@ -31,7 +109,6 @@
             <rect width="16" height="0.846" y="8.462" fill="#b22234"/>
             <rect width="16" height="0.846" y="10.154" fill="#b22234"/>
             <rect width="6.857" height="5.923" fill="#3c3b6e"/>
-            <!-- 50 Stars drawn as dots for performance at tiny scale -->
             <rect width="16" height="11" fill="none" stroke="#dfe1e2" stroke-width="0.5"/>
           </svg>
           <p class="usa-banner__text">An official website of the United States government</p>
@@ -44,11 +121,9 @@
         </button>
       </div>
 
-      <!-- Dropdown detailing verification -->
       <div id="gov-banner-details" class="usa-banner__content">
         <div class="usa-banner__guidance-grid">
           <div class="usa-banner__guidance-item">
-            <!-- Icon SVG .gov -->
             <svg class="usa-banner__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <circle cx="20" cy="20" r="19" fill="#F0F4F7" stroke="#adadad" stroke-width="2"/>
               <path d="M14 26V14h3v12h-3zm9 0V18h-2v-3h5v11h-3zm-10-8h2v2h-2v-2z" fill="#005ea2"/>
@@ -59,7 +134,6 @@
             </div>
           </div>
           <div class="usa-banner__guidance-item">
-            <!-- Icon SVG HTTPS/Lock -->
             <svg class="usa-banner__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <circle cx="20" cy="20" r="19" fill="#F0F4F7" stroke="#adadad" stroke-width="2"/>
               <rect x="13" y="18" width="14" height="10" rx="2" fill="#005ea2"/>
@@ -81,19 +155,16 @@
   <section class="freedom-250-bar" aria-label="America's 250th Anniversary Countdown">
     <div class="container freedom-250-bar__inner">
       <div class="freedom-250-bar__logo-section">
-        <!-- SVG America 250 Logo -->
         <svg class="freedom-250-bar__logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Freedom 250 Crest Logo">
           <circle cx="20" cy="20" r="18" fill="#1b365d" stroke="#f2a900" stroke-width="2"/>
           <path d="M20 7 C27 7 33 13 33 20 C33 27 27 33 20 33 C13 33 7 27 7 20 C7 13 13 7 20 7 Z" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 3"/>
           <text x="20" y="21" font-family="'Public Sans', sans-serif" font-size="7" font-weight="bold" fill="#f2a900" text-anchor="middle">FREEDOM</text>
           <text x="20" y="29" font-family="'Public Sans', sans-serif" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">250</text>
-          <!-- Small gold stars in crest -->
           <polygon points="20,10 21,12 23,12 21.5,13 22,15 20,14 18,15 18.5,13 17,12 19,12" fill="#f2a900"/>
         </svg>
         <a href="#" class="freedom-250-bar__link">America 250 Anniversary Celebration</a>
       </div>
 
-      <!-- Real-time dynamic countdown elements -->
       <div class="freedom-250-bar__countdown" id="countdown-timer">
         <span style="margin-right: 0.25rem; font-weight: 500;">Countdown to July 4, 2026:</span>
         <div class="countdown-unit">
@@ -121,7 +192,7 @@
        ========================================== -->
   <header class="cbp-header">
     <div class="container cbp-header__inner">
-      <a href="#" class="cbp-header__brand" aria-label="Go to CBP Home">
+      <a href="index.html" class="cbp-header__brand" aria-label="Go to CBP Home">
         <img src="logo.png" alt="U.S. Customs and Border Protection - Department of Homeland Security" class="cbp-header__logo-img">
       </a>
 
@@ -154,7 +225,7 @@
           </a>
         </li>
         <li class="cbp-nav__item active">
-          <a href="#">
+          <a href="index.html">
             <span>Trade</span>
             <svg class="nav-chevron" width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -202,10 +273,11 @@
     <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
       <ul class="breadcrumbs__list">
         <li class="breadcrumbs__item"><a href="#">Home</a></li>
-        <li class="breadcrumbs__item"><a href="#">Trade</a></li>
+        <li class="breadcrumbs__item"><a href="index.html">Trade</a></li>
         <li class="breadcrumbs__item"><a href="#">Priority Trade Issues</a></li>
-        <li class="breadcrumbs__item"><a href="#">Revenue</a></li>
-        <li class="breadcrumbs__item active" aria-current="page">Bill Payments</li>
+        <li class="breadcrumbs__item"><a href="index.html">Revenue</a></li>
+        <li class="breadcrumbs__item"><a href="index.html">Bill Payments</a></li>
+        <li class="breadcrumbs__item active" aria-current="page">Cargo Details</li>
       </ul>
     </nav>
 
@@ -241,7 +313,7 @@
             </a>
             <ul class="sidebar-nav__sublist">
               <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Overview</a></li>
-              <li class="sidebar-nav__item active"><a href="#" class="sidebar-nav__link">Bill Payments</a></li>
+              <li class="sidebar-nav__item active"><a href="index.html" class="sidebar-nav__link">Bill Payments</a></li>
               <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Continuous Bonds</a></li>
               <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Automated Clearinghouse (ACH)</a></li>
               <li class="sidebar-nav__item"><a href="#" class="sidebar-nav__link">Refunds &amp; Disbursements</a></li>
@@ -258,163 +330,109 @@
 
       <!-- RIGHT COLUMN: MAIN CONTENT PANEL -->
       <main class="content-panel" id="main-content">
-        <h1>Bill Payments</h1>
-        
-        <p class="intro-text">
-          U.S. Customs and Border Protection (CBP) is leveraging the U.S. Treasury’s <strong>Pay.gov</strong> service to modernize payment processing and provide the public with an online bill payment option.
-        </p>
+        <h1>Cargo Details &amp; Assessment</h1>
 
-        <!-- PARCEL & CARGO SEARCH WIDGET -->
-        <div class="usa-alert" style="background-color: #f0f4f7; border-left: 4px solid var(--color-primary); padding: 1.5rem; border-radius: 6px; border-top: 1px solid var(--color-border-light); border-right: 1px solid var(--color-border-light); border-bottom: 1px solid var(--color-border-light); margin-bottom: 2rem;">
-          <h3 style="margin-top: 0; color: var(--color-primary-darker); font-size: 18px; margin-bottom: 0.5rem;">CBP Cargo &amp; Parcel Tracking Portal</h3>
-          <p style="font-size: 13.5px; color: #5b616b; margin-bottom: 1rem;">Verify the customs status and outstanding billing information for incoming shipments.</p>
-          
-          <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 500px;">
-            <label for="parcel-search-input" style="font-weight: 600; font-size: 14.5px; color: var(--color-primary-darker);">Search for your parcel here</label>
-            <div style="display: flex; gap: 0.5rem;">
-              <input type="text" id="parcel-search-input" placeholder="Enter Tracking Number (e.g. cbpTRK89981166)" style="flex: 1; padding: 0.5rem 0.75rem; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body); font-size: 14px;" aria-label="Tracking Number">
-              <button id="parcel-search-btn" style="background-color: var(--color-primary); color: #ffffff; border: none; padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 14px; transition: background-color 0.2s;">Track</button>
+        <!-- Custom Warning Badge Banner -->
+        <div class="usa-alert" style="background-color: var(--color-warning-bg); border-left: 4px solid var(--color-accent-gold); padding: 1.25rem; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <strong style="color: var(--color-primary-darker); font-size: 16px; display: block; margin-bottom: 0.25rem;">Customs Status: Action Required</strong>
+              <span style="color: var(--color-neutral-dark); font-size: 14px;">Import duties and administrative handling fees must be settled to initiate shipment release.</span>
             </div>
-            
-            <!-- Result container (hidden by default) -->
-            <div id="parcel-search-result" style="display: none; margin-top: 1rem; padding: 1rem; background-color: #ffffff; border: 1px solid var(--color-border-light); border-radius: 4px;">
-              <!-- Will be populated by JS -->
-            </div>
+            <span class="status-badge status-badge--pending">Pending Payment</span>
           </div>
         </div>
 
-        <p>
-          Beginning March 2026, most bills generated by CBP will include a QR code, as well as step-by-step instructions, directing the public to the appropriate Pay.gov form (see below for a copy of those instructions). Once at the Pay.gov form, the public will complete the required payor identification and bill/payment fields, authorizing CBP to pull the funds via ACH Debit from the payor’s U.S. Bank Account and pay the related bill(s), providing expedited clearance of the outstanding bill* and avoiding the accrual of any additional interest.
-        </p>
-
-        <h2>To Pay Electronically via Pay.gov</h2>
-        
-        <div class="options-grid">
+        <!-- Professional Shipment Form layout -->
+        <div style="background-color: var(--color-neutral-lightest); border: 1px solid var(--color-border-light); border-radius: 6px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.02); margin-bottom: 2.5rem;">
           
-          <!-- OPTION 1 CARD (QR Code & Steps) -->
-          <div class="option-card">
-            <h3>Option 1: Mobile Quick-Pay</h3>
-            <ol class="steps-list">
-              <li>Add ACH ID <strong>7005009613</strong> to your Bank Account as an Authorized Payee</li>
-              <li>Scan the below QR Code using your smartphone camera</li>
-              <li>Optional: "Sign In" to Your Pay.gov Account</li>
-              <li>Click <strong>"Continue to the Form"</strong></li>
-              <li>Complete Required Fields + Submit Payment</li>
-            </ol>
-            
-            <div class="qr-container">
-              <img src="qr_code.png" alt="QR Code to cbp bill payments on pay.gov" class="qr-code-img">
-              <span class="qr-label">Scan to Pay</span>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <h3 style="margin-top: 0; font-size: 14px; text-transform: uppercase; color: #71767a; letter-spacing: 0.5px;">Consignee / Recipient</h3>
+              <p style="font-size: 16px; font-weight: 700; color: var(--color-primary-darker); margin-bottom: 0.25rem;">Quirk Donald Williams</p>
+              <p style="font-size: 14.5px; color: #5b616b; line-height: 1.4; margin: 0;">
+                1044 Birch Street<br>
+                St. Louis, MO 63102<br>
+                United States
+              </p>
+            </div>
+            <div>
+              <h3 style="margin-top: 0; font-size: 14px; text-transform: uppercase; color: #71767a; letter-spacing: 0.5px;">Shipment Reference</h3>
+              <p style="font-size: 14.5px; margin-bottom: 0.35rem; color: #323a45;">Tracking Code: <strong style="font-family: monospace; font-size: 15px; color: var(--color-primary-darker);">cbpTRK89981166</strong></p>
+              <p style="font-size: 14.5px; margin-bottom: 0.35rem; color: #323a45;">Duty Bill ID: <strong style="font-family: monospace; font-size: 15px;">CBP-BILL-89981166</strong></p>
+              <p style="font-size: 14.5px; margin-bottom: 0; color: #323a45;">Authorized Payee ACH ID: <strong>7005009613</strong></p>
             </div>
           </div>
 
-          <!-- OPTION 2 CARD (Manual Pay.gov Steps) -->
-          <div class="option-card">
-            <h3>Option 2: Direct pay.gov Search</h3>
-            <ol class="steps-list">
-              <li>Add ACH ID <strong>7005009613</strong> to your Bank Account as an Authorized Payee</li>
-              <li>Go directly to <a href="https://www.pay.gov" target="_blank" rel="noopener">Pay.gov</a></li>
-              <li>Click <strong>"See All Forms"</strong> (located in the page header)</li>
-              <li>Select <strong>"View By: Form Name"</strong></li>
-              <li>Filter by <strong>"CBP Bill Payments"</strong> and click the link</li>
-              <li>Optional: "Sign In" to Your Pay.gov Account</li>
-              <li>Click <strong>"Continue to Form"</strong></li>
-              <li>Complete Required Fields + Submit Payment</li>
-            </ol>
+          <h3 style="font-size: 16px; color: var(--color-primary-darker); margin-bottom: 1rem; border-bottom: 2px solid var(--color-primary-light); padding-bottom: 0.25rem;">Customs Duty Assessment Breakdown</h3>
+          
+          <table class="invoice-table">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th style="width: 20%; text-align: center;">Tariff Rate</th>
+                <th style="width: 25%; text-align: right;">Amount Due</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Imported Cargo Declared Value (Commercial Goods)</td>
+                <td style="text-align: center;">-</td>
+                <td class="amount">$1,250.00</td>
+              </tr>
+              <tr>
+                <td>CBP Assessed Duty Fee (HTS Compliance Category)</td>
+                <td style="text-align: center; font-weight: 600;">10.00%</td>
+                <td class="amount" style="color: var(--color-primary-darker);">$125.00</td>
+              </tr>
+              <tr>
+                <td>Administrative Lockbox Processing &amp; Custom Courier Fees</td>
+                <td style="text-align: center;">Flat</td>
+                <td class="amount">$25.00</td>
+              </tr>
+              <tr style="font-weight: 700; font-size: 15px; border-top: 2px solid var(--color-border);">
+                <td>Total Balance Outstanding</td>
+                <td style="text-align: center;">Combined</td>
+                <td class="amount" style="color: #b22234; font-size: 16px; font-weight: 700;">$150.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Official Release Action Card -->
+          <div style="background-color: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: 4px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+            <div>
+              <p style="margin: 0; font-size: 14.5px; font-weight: 600; color: var(--color-primary-darker);">Direct Payment Instructions via Pay.gov</p>
+              <p style="margin: 0.25rem 0 0; font-size: 13px; color: #323a45;">Utilize CBP Bill Payments search using Payee ACH ID <strong>7005009613</strong> and Bill Number <strong>CBP-BILL-89981166</strong>.</p>
+            </div>
+            <a href="index.html#electronic-payment" style="background-color: var(--color-primary); color: #ffffff; text-decoration: none; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 700; font-size: 13.5px; transition: background-color 0.2s;">View Payment Forms</a>
           </div>
 
         </div>
 
-        <h2>Benefits of Online Bill Payment:</h2>
-        <ul class="benefits-list">
-          <li>Collection date credited per the Pay.gov confirmation "Payment Date," avoiding the accrual of any additional interest on an outstanding bill*</li>
-          <li>Instant electronic receipt and payment confirmation log history.</li>
-          <li>Eliminates mail delay transit times, avoiding overdue interest charges.</li>
+        <h2>Cargo Tracking Event Log</h2>
+        <ul class="timeline">
+          <li class="timeline-item active">
+            <span class="timeline-date">June 29, 2026 - 11:32 AM</span>
+            <div class="timeline-desc">
+              <strong>Held for Customs Clearance</strong><br>
+              Shipment processed at St. Louis Lockbox Hub. Customs clearance pending payment of duties (Invoice ID: CBP-BILL-89981166).
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">June 28, 2026 - 03:15 PM</span>
+            <div class="timeline-desc">
+              <strong>Arrived at Port of Entry</strong><br>
+              Consignment received at St. Louis International Terminal and unloaded for tariff scanning.
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">June 25, 2026 - 09:40 AM</span>
+            <div class="timeline-desc">
+              <strong>Dispatched from Origin Hub</strong><br>
+              Cargo loaded and cleared for transit to destination terminal.
+            </div>
+          </li>
         </ul>
-
-        <!-- IMPORTANT NOTE -->
-        <div class="usa-alert">
-          <strong>* Notice on Expedited Clearance:</strong> To ensure expedited clearance of the debt, the bill number and amount paid must match the records in CBP’s billing system. If they do not, CBP personnel must research the payment and manually apply it, which will delay clearance. In this scenario, you will still be credited for the payment based on the Pay.gov "Payment Date," but it will delay notice of the bill being paid-in-full. Therefore, you must verify the bill number and amount due when entering information onto the Pay.gov form.
-        </div>
-
-        <p style="margin: 1.5rem 0; font-weight: 500;">
-          For additional assistance, please contact the Billing Help Desk at <span style="color: var(--color-primary-darker);">317-614-4811</span> or email <a href="mailto:billinginquiry@cbp.dhs.gov">billinginquiry@cbp.dhs.gov</a>.
-        </p>
-
-        <!-- PMS PARTICIPANTS WARNING BANNER -->
-        <div class="usa-alert usa-alert--important">
-          <strong>PMS Participants:</strong> Per this <a href="https://www.federalregister.gov/documents/2025/10/16/2025-19572/modification-of-the-national-customs-automation-program-test-regarding-periodic-monthly-statements" target="_blank" rel="noopener">FRN</a> (90 FR 48314) announced via CSMS Message #<a href="https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3f83c0a" target="_blank" rel="noopener">66599946</a>, if you are paying a supplemental duty bill (SDB) for an entry originally paid on a Periodic Monthly Statement (PMS), you <strong>MUST pay electronically</strong>, either via the above ACH Debit method through Pay.gov or via an ACH Credit payment. You may <strong>NOT</strong> pay via the below additional payment options. To pay via ACH Debit on Pay.gov, follow the instructions above. Questions pertaining to ACH Credit payments can be directed to <a href="mailto:ACH-CUSTOMS@cbp.dhs.gov">ACH-CUSTOMS@cbp.dhs.gov</a>.
-        </div>
-
-        <h2>Additional Payment Options</h2>
-        <p>
-          CBP will continue to utilize a lockbox facility at the U.S. Bank in St. Louis, Missouri to receive, process, and post most bill payment types. Please review the following and ensure payment is sent to the correct address (below):
-        </p>
-        
-        <ul class="bullet-list">
-          <li>Interest is assessed on bills based on the date CBP receives payment.</li>
-          <li>Note the "Amount Due After" date printed on your bill to account for interest that could accrue while your payment is in transit.</li>
-          <li>Allow a minimum of 7-10 days for payments sent by U.S. Postal Service (USPS) regular mail.</li>
-          <li>Allow a minimum of 2-3 days for payments sent by USPS overnight express mail.</li>
-          <li>If additional interest is assessed and your submitted payment did not satisfy the debt in full, a new balance will be due and billed.</li>
-          <li>Include the bill number(s) and amount(s), itemized by bill if appropriate, to be paid with your payment. This information may be included on the check or you may include a separate remittance slip with the payment. Missing details will delay application.</li>
-        </ul>
-
-        <!-- ADDRESS CARDS -->
-        <div class="address-grid">
-          
-          <div class="address-card">
-            <h4>USPS Address for U.S. Bank Lockbox:</h4>
-            <div class="address-content">
-              U.S. Customs and Border Protection
-              Bill Payments
-              P.O. Box 979126
-              St. Louis, MO 63197-9000
-            </div>
-            <p class="address-note">Use for regular envelope postal mailings.</p>
-          </div>
-
-          <div class="address-card">
-            <h4>Overnight Courier Address (Other than USPS):</h4>
-            <div class="address-content">
-              U.S. Government Lockbox
-              U.S. Customs and Border Protection
-              #979126
-              3180 Rider Trail South
-              Earth City, MO 63045
-            </div>
-            <p class="address-note"><strong>Note:</strong> This address should only be used as a last resort due to increased chance of courier routing delays.</p>
-          </div>
-
-        </div>
-
-        <h2>Surety Payments</h2>
-        <p>
-          If a surety has received a check from a principal in payment of bills and is simply forwarding that check to CBP, the surety should mail that check to:
-        </p>
-        <div class="usa-alert usa-alert--important" style="margin: 0.5rem 0 1.5rem 0; background-color: #fafafa; border-left-color: #71767a;">
-          <strong>U.S. Government Lockbox</strong><br>
-          U.S. Customs and Border Protection<br>
-          #979126<br>
-          3180 Rider Trail South<br>
-          Earth City, MO 63045
-        </div>
-
-        <p>
-          If a surety is sending its check to pay bills (other than FP&F bills) that are owed by their principal, the surety should mail their check to the Revenue Division at the following address:
-        </p>
-        <div class="usa-alert usa-alert--important" style="margin: 0.5rem 0 1.5rem 0; background-color: #fafafa; border-left-color: #71767a;">
-          <strong>U.S. Customs and Border Protection</strong><br>
-          Revenue Division - Cashier<br>
-          8899 East 56th Street<br>
-          Indianapolis, IN 46249
-        </div>
-
-        <!-- METADATA FOOTER -->
-        <div class="page-metadata">
-          <span>Last Modified: May 04, 2026</span>
-          <span>Topic: Trade Revenue &amp; Billing</span>
-        </div>
 
       </main>
 
@@ -430,12 +448,10 @@
         
         <div class="cbp-footer__brand-col">
           <a href="#" class="cbp-footer__seal-link">
-            <!-- DHS Crest Vector SVG -->
             <svg class="cbp-footer__seal" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="50" cy="50" r="48" fill="#002a54" stroke="#ffffff" stroke-width="2"/>
               <path d="M50 15 L78 35 L78 70 L50 85 L22 70 L22 35 Z" fill="#1b365d" stroke="#ffffff" stroke-width="2"/>
               <path d="M50 20 L70 35 L70 65 L50 78 L30 65 L30 35 Z" fill="#ffffff"/>
-              <!-- Internal shield details -->
               <rect x="47" y="40" width="6" height="20" fill="#b22234"/>
               <text x="50" y="38" font-family="sans-serif" font-size="8" font-weight="bold" fill="#002a54" text-anchor="middle">DHS</text>
             </svg>
