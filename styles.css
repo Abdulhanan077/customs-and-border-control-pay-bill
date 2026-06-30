@@ -454,8 +454,8 @@ a:hover {
   display: inline-block;
   padding: 0 !important;
   margin: 0 !important;
-  color: var(--color-primary) !important;
-  text-decoration: underline !important;
+  color: #3b3b3b !important;
+  text-decoration: none !important;
   font-size: 13.5px !important;
   font-family: var(--font-body) !important;
   font-weight: 400 !important;
@@ -464,8 +464,8 @@ a:hover {
 }
 
 .mega-menu__col ul li a:hover {
-  color: var(--color-primary-darker) !important;
-  text-decoration: none !important;
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
 }
 
 /* Rotate chevron when open */
